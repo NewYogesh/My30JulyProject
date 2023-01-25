@@ -1,0 +1,105 @@
+Ecommerce --> Used by end customers
+
+nopcommerce --> client --> stake holder --> Requirements
+Capgemini --> BA --> product owner --> BRS/product backlog
+
+SRS/sprint backlog(User stories = Description + Acceptance criteria)
+
+scrum master --> sprint formation --> Sprint 1 --> 8 user stories
+
+sprint grooming
+Sprint planning
+
+DEV --> SIT --> UAT --> PROD
+
+https://demo.nopcommerce.com/
+
+Functional Coverage:
+1) Behaviour coverage
+2) Input Domain Coverage (BVA, ECP)
+Phone Number -->
+
+BVA --> 10 digits
+9 digits
+12 digits
+
+ECP --> 
+
+Accept --> Numericals
+Does not accept --> capitals, small letters, spaces, symbols, special characters
+
+3) Error Handeling covergae
+4) Backend coverage
+5) Calculation Based coverage
+6) Service level covergae
+
+Test Scenarios --> What to test
+Test Cases --> How to test
+Test steps --> step by step excution
+
+Test SCenario --> To validate the functionality of Register module in ecommerce application
+Test Cases: 1) To validate the functionality of Register module in ecommerce application by filling the data in mandatory
+fields only
+Test Steps:
+1) launch url
+2) click on register button
+3) insert data in firstname
+4) insert data in lastname
+5) email
+6) password
+7) confirm password
+8) click on register button
+9) verfiy if user is registered successfully
+10) Verify if user details are inserted in database table correctly
+
+2) To validate the functionality of Register module in ecommerce application by filling the data in all fields
+3) To validate the functionality of Register module in ecommerce application by filling the data in non-mandatory
+fields only
+
+How do we get the build? What do we exactly get when we say 'Dev provide build'?
+
+Deployment:
+What's new
+list of defects fixed
+build number/version
+
+DEV : localhost4200
+SIT : https://demo.nopcommerce.com/
+UAT : https://demouat.nopcommerce.com/
+PROD : https://nopcommerce.com/
+
+How many test cases do we write in a day?
+
+Manual -
+Easy --> 20 -22 test cases
+Complex --> 10-12 test cases
+
+Automation -->
+
+Easy --> 1-2 test cases
+Complex --> 1 test cases 2-3 days
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,200 @@
+Locators : 
+
+I.Locators are the way to identify an HTML element on a webpage.
+II. To identify an element present in webpage we need to use ‘findElement’
+method which is present in web driver.
+WebDriver driver = new ChromeDriver
+driver.findElement (By arg)
+III. findElement method will identifies an element with the help of By class
+which contains Static methods
+IV. All the static methods present in By class are known as locator types
+
+Locators Types :
+1.Tagname 
+2.ID
+3.Name
+4.Class Name
+5.LinkText
+6.Partial link Text
+7.Css Selector
+8.Xpath
+
+
+What is xpath?
+
+1.It is a syntax or language for finding any element on the web page using xml pathe expression./XPath
+is a Selenium technique to navigate through a page's HTML structure.
+2.Xpath is used to find the location of any element on a webpage using HTML DOM Structure.
+3.Xpath is a address of element
+
+Types of Xpath :
+1. Absolute xpath
+2. Xpath by text
+3. xpath by contains  
+   1. By attribute
+   2. By text
+4. xpath by index
+5. xpath by attributes
+6. Relative xpath 
+
+
+1. Xpath by attribute
+Synatx: //tagname[@attributename="attribute value"]
+driver.findElement(By.xpath("//input[@id=\"dest\"]"));
+
+Example : 
+package Locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class XPathbyattribute {
+
+	public static void main(String[] args) throws InterruptedException {
+	
+		System.setProperty("Webdriver.chrome.driver", "C:\\Installer\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.facebook.com/");
+		
+	//	Syntax -  //Tagname[@attributename="attriutevalue"]
+		driver.findElement(By.xpath("//input[@type=\"text\"]")).sendKeys("Tom@123");
+		
+		driver.findElement(By.xpath("//input[@class=\"inputtext _55r1 _6luy _9npi\"]")).sendKeys("!@#$%^&");
+		
+		Thread.sleep(4000);
+		
+		driver.findElement(By.xpath("//div[@class=\"_9lsa\"]")).click();
+		
+		Thread.sleep(4000);
+		
+		driver.findElement(By.xpath("//button[@class=\"_42ft _4jy0 _6lth _4jy6 _4jy1 selected _51sy\"]")).click();
+		
+		
+	}
+
+}
+=================================================================================================
+
+2.Xpath by text 
+Syntax - //tagname[text()='text value']
+Example - //driver.findElement(By.xpath("//button[text()='Log In']")).click();
+
+package Locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class XpathByText {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+	System.setProperty("Webdriver.chrome.driver", "C:\\Installer\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.facebook.com/");
+		//Xpath by attribute
+		driver.findElement(By.xpath("//input[@id=\"email\"]")).sendKeys("qwertyui");
+		driver.findElement(By.xpath("//input[@id=\"pass\"]")).sendKeys("@#$%^&");
+		
+		//XPath by text
+		Thread.sleep(3000);
+		//Tagname[text()="textvalue"]
+		
+		//driver.findElement(By.xpath("//button[text()=\"Log in\"]")).click();
+		//Xpath by text
+		driver.findElement(By.xpath("//a[text()=\"Forgotten password?\"]")).click();
+
+		
+	}
+
+}
+==============================================================================================
+3. Xpath by contains
+  1.By text
+Syntax - //tagname[contains(text(),'textvalue')]
+Example :  driver.findElement(By.xpath("//button[contains(text(),'Log')]")).click();
+
+package Locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Xpathbycontainstext {
+
+	public static void main(String[] args) throws InterruptedException {
+	
+		
+        System.setProperty("Webdriver.chrome.driver", "C:\\Installer\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.facebook.com/");
+		
+		//Xpath by attribute
+		driver.findElement(By.xpath("//input[@id=\"email\"]")).sendKeys("qwertyui");
+		driver.findElement(By.xpath("//input[@id=\"pass\"]")).sendKeys("@#$%^&");
+		
+		//Xpath by contains -by text
+		
+	    //syntax	//tagname[contains(text(),"textvalue")]
+		
+           Thread.sleep(3000);
+		//driver.findElement(By.xpath("//button[contains(text(),'Log')]")).click();
+		
+		driver.findElement(By.xpath("//a[contains(text(),\"Create New Account\")]")).click();
+		
+		//
+	}
+
+}
+=============================================================================================
+  2. Contains by attribute
+Syntax -  //Tagname[@attributename="attriutevalue"]
+driver.findElement(By.xpath("//input[@type=\"text\"]")).sendKeys("Tom@123");
+
+package Locators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class XpathContainsbyattribute {
+
+	public static void main(String[] args) {
+		
+		
+		System.setProperty("Webdriver.chrome.driver", "C:\\Installer\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.facebook.com/");
+		
+		//Contains by attribute
+		//Syntax - //Tagname[contains(@attributename,"attribute")]
+		
+		driver.findElement(By.xpath("//input[contains(@type,\"text\")]")).sendKeys("qwerty");
+		
+		driver.findElement(By.xpath("//input[contains(@name,\"pass\")]")).sendKeys("!@#$%");
+		
+		driver.findElement(By.xpath("//div[contains(@class,\"_9lsa\")]")).click();
+		
+		driver.findElement(By.xpath("//button[contains(@type,\"submit\")]")).click();
+	}
+
+}
+
+====================================================================================================
